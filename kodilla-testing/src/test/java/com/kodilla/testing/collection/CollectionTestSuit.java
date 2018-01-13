@@ -57,8 +57,7 @@ public class CollectionTestSuit {
         ArrayList<Integer> checkList = oddNumberExterminator.exterminate(numbersList);
 
         //Then
-        for (int i = 0; i < checkList.size(); i++) {
-            Assert.assertEquals(onlyEvenNumbersList.get(i), checkList.get(i));
-        }
+        Assert.assertEquals(onlyEvenNumbersList, checkList);
+
     }
 }
