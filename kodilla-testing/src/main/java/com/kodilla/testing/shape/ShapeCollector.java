@@ -22,6 +22,17 @@ public class ShapeCollector {
         return result;
     }
 
+    public Shape removeFigureWithIndex(int i) {
+        Shape result = null;
+        if (i >= 0 && i < shapes.size()) {
+            result = shapes.remove(i);
+            System.out.println("Usunięto figurę --> " + result);
+        } else {
+            System.out.println("Brak na liście figury z indeksem " + i + " do usunięcia");
+        }
+        return result;
+    }
+
     public Shape getFigure(int i) {
         Shape theFigure = null;
         if (i >= 0 && i < shapes.size()) {
