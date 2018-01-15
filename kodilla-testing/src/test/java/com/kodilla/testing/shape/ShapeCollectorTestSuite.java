@@ -73,10 +73,10 @@ public class ShapeCollectorTestSuite {
         collector.addFigure(shapeCircle);
 
         //When
-        boolean result = collector.removeFigure(shapeCircle);
+        Shape result = collector.removeFigure(shapeCircle);
 
         //Then
-        Assert.assertTrue(result);
+        Assert.assertNotNull(result);
     }
 
     @Test
@@ -103,14 +103,16 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigureNotExisting() {
         //Given
-        Shape shapeSquare = new Square(9);
+        Shape shapeCircle = new Circle(10);
+        Shape shapeSquare = null;
         ShapeCollector collector = new ShapeCollector();
+        collector.addFigure(shapeCircle);
 
         //When
-        boolean result = collector.removeFigure(shapeSquare);
+        Shape result = collector.removeFigure(shapeSquare);
 
         //Then
-        Assert.assertFalse(result);
+        Assert.assertNull(result);
     }
 
     @Test

@@ -10,14 +10,14 @@ public class ShapeCollector {
         System.out.println("Dodano figurę --> " + shape);
     }
 
-    public boolean removeFigure(Shape shape){
-        boolean result = false;
-        if (!shapes.isEmpty()) {
+    public Shape removeFigure(Shape shape){
+        Shape result = shape;
+        if (shapes.contains(shape)) {
+            result = shape;
             shapes.remove(shape);
             System.out.println("Usunięto figurę --> " + shape);
-            result = true;
         } else {
-            System.out.println("Brak na liście figur do usunięcia");
+            System.out.println("Brak na liście podanej figury do usunięcia");
         }
         return result;
     }
