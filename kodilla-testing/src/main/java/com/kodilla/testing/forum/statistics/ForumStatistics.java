@@ -12,14 +12,12 @@ public class ForumStatistics {
         usersQuantity = statistics.usersNames().size();
         postsQuantity = statistics.postsCount();
         commentsQuantity = statistics.commentsCount();
-        if (postsQuantity != 0 && usersQuantity != 0 ) {
+        if (usersQuantity > 0 && postsQuantity > 0) {
             averagePostsAnUser = (double) postsQuantity / usersQuantity;
-        }
-        if (commentsQuantity != 0 && usersQuantity != 0) {
-            averageCommentsAnUser = (double) commentsQuantity / usersQuantity;
-        }
-        if (commentsQuantity != 0 && postsQuantity != 0) {
-            averageCommentsAnPost = (double) commentsQuantity / postsQuantity;
+            if (commentsQuantity > 0) {
+                averageCommentsAnUser = (double) commentsQuantity / usersQuantity;
+                averageCommentsAnPost = (double) commentsQuantity / postsQuantity;
+            }
         }
     }
 
