@@ -27,11 +27,7 @@ public class LibraryUser {
 
     @Override
     public String toString() {
-        return "LibraryUser{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", peselId='" + peselId + '\'' +
-                '}';
+        return  firstName.toUpperCase() + " " +lastName.toUpperCase() + " pesel(" + peselId + ")";
     }
 
     @Override
