@@ -12,6 +12,12 @@ public class ForumStatistics {
         usersQuantity = statistics.usersNames().size();
         postsQuantity = statistics.postsCount();
         commentsQuantity = statistics.commentsCount();
+    /*    if (usersQuantity > 0 && postsQuantity > 0 && commentsQuantity > 0) {
+            averagePostsAnUser = (double) postsQuantity / usersQuantity;
+            averageCommentsAnUser = (double) commentsQuantity / usersQuantity;
+            averageCommentsAnPost = (double) commentsQuantity / postsQuantity;
+
+        }*/
         if (usersQuantity > 0 && postsQuantity > 0) {
             averagePostsAnUser = (double) postsQuantity / usersQuantity;
             if (commentsQuantity > 0) {
