@@ -36,7 +36,7 @@ public class ForumStatisticsTestSuite {
         //Given
         System.out.println("Badany przypadek testowy --> ilość postów = 0");
         Statistics forumStatisticsMock = mock(Statistics.class);
-        ArrayList<String> usersList = new ArrayList<String>();
+        ArrayList<String> usersList = new ArrayList<>();
         usersList.add("John Travolta");
         usersList.add("Jennifer Connelly");
         usersList.add("Scarlett Johansson");
@@ -55,11 +55,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
+        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
+        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
+        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
 
         //Then
         Assert.assertEquals(5, quantityUsers);
         Assert.assertEquals(0, quantityPosts);
         Assert.assertEquals(0, quantityComments);
+        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
+        Assert.assertEquals(0, answerAverageCommentsAnPost);
+        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
 
     }
 
@@ -68,7 +74,7 @@ public class ForumStatisticsTestSuite {
         //Given
         System.out.println("Badany przypadek testowy --> ilość postów = 1000");
         Statistics forumStatisticsMock = mock(Statistics.class);
-        ArrayList<String> usersList = new ArrayList<String>();
+        ArrayList<String> usersList = new ArrayList<>();
         usersList.add("Jennifer Connelly");
         usersList.add("Scarlett Johansson");
         usersList.add("Camilla Belle");
@@ -85,11 +91,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
+        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
+        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
+        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
 
         //Then
         Assert.assertEquals(3,quantityUsers);
         Assert.assertEquals(1000, quantityPosts);
         Assert.assertEquals(3678, quantityComments);
+        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
+        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
+        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
     }
 
     @Test
@@ -97,7 +109,7 @@ public class ForumStatisticsTestSuite {
         //Given
         System.out.println("Badany przypadek testowy --> ilość komentarzy = 0");
         Statistics forumStatisticsMock = mock(Statistics.class);
-        ArrayList<String> usersList = new ArrayList<String>();
+        ArrayList<String> usersList = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             usersList.add("user_" + i);
         }
@@ -114,11 +126,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
+        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
+        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
+        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
 
         //Then
         Assert.assertEquals(50, quantityUsers);
         Assert.assertEquals(367, quantityPosts);
         Assert.assertEquals(0, quantityComments);
+        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
+        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
+        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
     }
 
     @Test
@@ -126,7 +144,7 @@ public class ForumStatisticsTestSuite {
         //Given
         System.out.println("Badany przypadek testowy --> ilość komentarzy > ilości postów");
         Statistics forumStatisticsMock = mock(Statistics.class);
-        ArrayList<String> usersList = new ArrayList<String>();
+        ArrayList<String> usersList = new ArrayList<>();
         for (int i = 0; i < 24; i++) {
             usersList.add("user_" + i);
         }
@@ -143,12 +161,18 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
+        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
+        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
+        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
 
         //Then
 
         Assert.assertEquals(24, quantityUsers);
         Assert.assertEquals(750, quantityPosts);
         Assert.assertEquals(820, quantityComments);
+        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
+        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
+        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
     }
 
     @Test
@@ -156,7 +180,7 @@ public class ForumStatisticsTestSuite {
         //Given
         System.out.println("Badany przypadek testowy --> ilość postów > ilości komentarzy");
         Statistics forumStatisticsMock = mock(Statistics.class);
-        ArrayList<String> usersList = new ArrayList<String>();
+        ArrayList<String> usersList = new ArrayList<>();
         for (int i = 0; i < 74; i++) {
             usersList.add("user_" + i);
         }
@@ -173,12 +197,18 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
+        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
+        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
+        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
 
         //Then
 
         Assert.assertEquals(74, quantityUsers);
         Assert.assertEquals(360, quantityPosts);
         Assert.assertEquals(220, quantityComments);
+        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
+        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
+        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
     }
 
     @Test
@@ -186,7 +216,7 @@ public class ForumStatisticsTestSuite {
         //Given
         System.out.println("Badany przypadek testowy --> ilość użytkowników = 0");
         Statistics forumStatisticsMock = mock(Statistics.class);
-        ArrayList<String> usersList = new ArrayList<String>();
+        ArrayList<String> usersList = new ArrayList<>();
 
         when(forumStatisticsMock.usersNames()).thenReturn(usersList);
         when(forumStatisticsMock.postsCount()).thenReturn(0);
@@ -200,11 +230,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getPostsQuantity();
+        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
+        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
+        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
 
         //Then
         Assert.assertEquals(0, quantityUsers);
         Assert.assertEquals(0, quantityPosts);
         Assert.assertEquals(0, quantityComments);
+        Assert.assertEquals(0, answerAveragePostsAnUser);
+        Assert.assertEquals(0, answerAverageCommentsAnPost);
+        Assert.assertEquals(0, answerAverageCommentsAnUser);
     }
 
     @Test
@@ -212,7 +248,7 @@ public class ForumStatisticsTestSuite {
         //Given
         System.out.println("Badany przypadek testowy --> ilość użytkowników = 100");
         Statistics forumStatisticsMock = mock(Statistics.class);
-        ArrayList<String> usersList = new ArrayList<String>();
+        ArrayList<String> usersList = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             usersList.add("user_" + i);
         }
@@ -228,10 +264,16 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
+        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
+        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
+        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
 
         //Then
         Assert.assertEquals(100, quantityUsers);
         Assert.assertEquals(250, quantityPosts);
         Assert.assertEquals(782, quantityComments);
+        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
+        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
+        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
     }
 }

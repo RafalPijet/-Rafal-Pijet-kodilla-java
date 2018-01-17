@@ -12,19 +12,12 @@ public class ForumStatistics {
         usersQuantity = statistics.usersNames().size();
         postsQuantity = statistics.postsCount();
         commentsQuantity = statistics.commentsCount();
-    /*    if (usersQuantity > 0 && postsQuantity > 0 && commentsQuantity > 0) {
+        if (usersQuantity > 0 && postsQuantity > 0) {
             averagePostsAnUser = (double) postsQuantity / usersQuantity;
             averageCommentsAnUser = (double) commentsQuantity / usersQuantity;
             averageCommentsAnPost = (double) commentsQuantity / postsQuantity;
-
-        }*/
-        if (usersQuantity > 0 && postsQuantity > 0) {
-            averagePostsAnUser = (double) postsQuantity / usersQuantity;
-            if (commentsQuantity > 0) {
-                averageCommentsAnUser = (double) commentsQuantity / usersQuantity;
-                averageCommentsAnPost = (double) commentsQuantity / postsQuantity;
-            }
         }
+
     }
 
     public void showStatistics() {
@@ -48,5 +41,17 @@ public class ForumStatistics {
 
     public int getCommentsQuantity() {
         return commentsQuantity;
+    }
+
+    public double getAveragePostsAnUser() {
+        return averagePostsAnUser;
+    }
+
+    public double getAverageCommentsAnUser() {
+        return averageCommentsAnUser;
+    }
+
+    public double getAverageCommentsAnPost() {
+        return averageCommentsAnPost;
     }
 }
