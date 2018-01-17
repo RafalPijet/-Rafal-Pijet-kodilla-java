@@ -55,17 +55,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
-        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
-        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
-        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
+        double answerAveragePostsAnUser = forumStatistics.getAveragePostsAnUser();
+        double answerAverageCommentsAnPost = forumStatistics.getAverageCommentsAnPost();
+        double answerAverageCommentsAnUser = forumStatistics.getAverageCommentsAnUser();
 
         //Then
         Assert.assertEquals(5, quantityUsers);
         Assert.assertEquals(0, quantityPosts);
         Assert.assertEquals(0, quantityComments);
-        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
-        Assert.assertEquals(0, answerAverageCommentsAnPost);
-        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
+        Assert.assertEquals(quantityPosts / quantityUsers, answerAveragePostsAnUser, 1);
+        Assert.assertEquals(0, answerAverageCommentsAnPost, 1);
+        Assert.assertEquals(quantityComments / quantityUsers, answerAverageCommentsAnUser, 1);
 
     }
 
@@ -91,17 +91,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
-        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
-        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
-        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
+        double answerAveragePostsAnUser = forumStatistics.getAveragePostsAnUser();
+        double answerAverageCommentsAnPost = forumStatistics.getAverageCommentsAnPost();
+        double answerAverageCommentsAnUser = forumStatistics.getAverageCommentsAnUser();
 
         //Then
         Assert.assertEquals(3,quantityUsers);
         Assert.assertEquals(1000, quantityPosts);
         Assert.assertEquals(3678, quantityComments);
-        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
-        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
-        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
+        Assert.assertEquals(quantityPosts / quantityUsers, answerAveragePostsAnUser, 1);
+        Assert.assertEquals(quantityComments / quantityPosts, answerAverageCommentsAnPost, 1);
+        Assert.assertEquals(quantityComments / quantityUsers, answerAverageCommentsAnUser, 1);
     }
 
     @Test
@@ -126,17 +126,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
-        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
-        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
-        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
+        double answerAveragePostsAnUser = forumStatistics.getAveragePostsAnUser();
+        double answerAverageCommentsAnPost = forumStatistics.getAverageCommentsAnPost();
+        double answerAverageCommentsAnUser = forumStatistics.getAverageCommentsAnUser();
 
         //Then
         Assert.assertEquals(50, quantityUsers);
         Assert.assertEquals(367, quantityPosts);
         Assert.assertEquals(0, quantityComments);
-        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
-        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
-        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
+        Assert.assertEquals(quantityPosts / quantityUsers, answerAveragePostsAnUser, 1);
+        Assert.assertEquals(quantityComments / quantityPosts, answerAverageCommentsAnPost, 1);
+        Assert.assertEquals(quantityComments / quantityUsers, answerAverageCommentsAnUser, 1);
     }
 
     @Test
@@ -161,18 +161,18 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
-        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
-        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
-        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
+        double answerAveragePostsAnUser = forumStatistics.getAveragePostsAnUser();
+        double answerAverageCommentsAnPost = forumStatistics.getAverageCommentsAnPost();
+        double answerAverageCommentsAnUser = forumStatistics.getAverageCommentsAnUser();
 
         //Then
 
         Assert.assertEquals(24, quantityUsers);
         Assert.assertEquals(750, quantityPosts);
         Assert.assertEquals(820, quantityComments);
-        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
-        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
-        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
+        Assert.assertEquals(quantityPosts / quantityUsers, answerAveragePostsAnUser, 1);
+        Assert.assertEquals(quantityComments / quantityPosts, answerAverageCommentsAnPost, 1);
+        Assert.assertEquals(quantityComments / quantityUsers, answerAverageCommentsAnUser, 1);
     }
 
     @Test
@@ -197,18 +197,18 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
-        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
-        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
-        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
+        double answerAveragePostsAnUser = forumStatistics.getAveragePostsAnUser();
+        double answerAverageCommentsAnPost = forumStatistics.getAverageCommentsAnPost();
+        double answerAverageCommentsAnUser = forumStatistics.getAverageCommentsAnUser();
 
         //Then
 
         Assert.assertEquals(74, quantityUsers);
         Assert.assertEquals(360, quantityPosts);
         Assert.assertEquals(220, quantityComments);
-        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
-        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
-        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
+        Assert.assertEquals(quantityPosts / quantityUsers, answerAveragePostsAnUser, 1);
+        Assert.assertEquals(quantityComments / quantityPosts, answerAverageCommentsAnPost, 1);
+        Assert.assertEquals(quantityComments / quantityUsers, answerAverageCommentsAnUser, 1);
     }
 
     @Test
@@ -230,17 +230,17 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getPostsQuantity();
-        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
-        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
-        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
+        double answerAveragePostsAnUser = forumStatistics.getAveragePostsAnUser();
+        double answerAverageCommentsAnPost = forumStatistics.getAverageCommentsAnPost();
+        double answerAverageCommentsAnUser = forumStatistics.getAverageCommentsAnUser();
 
         //Then
         Assert.assertEquals(0, quantityUsers);
         Assert.assertEquals(0, quantityPosts);
         Assert.assertEquals(0, quantityComments);
-        Assert.assertEquals(0, answerAveragePostsAnUser);
-        Assert.assertEquals(0, answerAverageCommentsAnPost);
-        Assert.assertEquals(0, answerAverageCommentsAnUser);
+        Assert.assertEquals(0, answerAveragePostsAnUser, 1);
+        Assert.assertEquals(0, answerAverageCommentsAnPost, 1);
+        Assert.assertEquals(0, answerAverageCommentsAnUser, 1);
     }
 
     @Test
@@ -264,16 +264,16 @@ public class ForumStatisticsTestSuite {
         int quantityUsers = forumStatistics.getUsersQuantity();
         int quantityPosts = forumStatistics.getPostsQuantity();
         int quantityComments = forumStatistics.getCommentsQuantity();
-        int answerAveragePostsAnUser = (int)(1000 * forumStatistics.getAveragePostsAnUser());
-        int answerAverageCommentsAnPost = (int) (1000 * forumStatistics.getAverageCommentsAnPost());
-        int answerAverageCommentsAnUser = (int) (1000 * forumStatistics.getAverageCommentsAnUser());
+        double answerAveragePostsAnUser =forumStatistics.getAveragePostsAnUser();
+        double answerAverageCommentsAnPost = forumStatistics.getAverageCommentsAnPost();
+        double answerAverageCommentsAnUser = forumStatistics.getAverageCommentsAnUser();
 
         //Then
         Assert.assertEquals(100, quantityUsers);
         Assert.assertEquals(250, quantityPosts);
         Assert.assertEquals(782, quantityComments);
-        Assert.assertEquals((1000 * quantityPosts / quantityUsers), answerAveragePostsAnUser);
-        Assert.assertEquals((1000 * quantityComments / quantityPosts), answerAverageCommentsAnPost);
-        Assert.assertEquals((1000 * quantityComments / quantityUsers), answerAverageCommentsAnUser);
+        Assert.assertEquals(quantityPosts / quantityUsers, answerAveragePostsAnUser,1 );
+        Assert.assertEquals(quantityComments / quantityPosts, answerAverageCommentsAnPost, 1);
+        Assert.assertEquals(quantityComments / quantityUsers, answerAverageCommentsAnUser, 1);
     }
 }
