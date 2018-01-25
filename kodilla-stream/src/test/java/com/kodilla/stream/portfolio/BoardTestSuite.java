@@ -159,14 +159,14 @@ public class BoardTestSuite {
         System.out.println("Ilość zadań w trakcie realizacji --> " + tasksQuantity);
         System.out.println("Średnia ilość dni realizacji zadania --> " + averageDays);
         System.out.println();
-        List<Task> tasks = project.getTaskLists().stream()
+        OptionalDouble tasks = project.getTaskLists().stream()
                 .filter(tasksInProgress::contains)
                 .flatMap(taskList -> taskList.getTasks().stream())
-                .collect(toList());
-        OptionalDouble result = IntStream.range(0, tasks.size())
-                .map(t -> LocalDate.now().compareTo(tasks.get(t).getCreated()))
+                .mapToInt(t -> LocalDate.now().compareTo(t.getCreated()))
+        //OptionalDouble result = IntStream.range(0, tasks.size())
+               // .map(t -> LocalDate.now().compareTo(tasks.get(t).getCreated())
                 .average();
-        double averageWithAverageMethod = result.getAsDouble();
+        double averageWithAverageMethod = tasks.getAsDouble();
 
         System.out.println("Średnia liczona metodą average() --> " + averageWithAverageMethod);
 
