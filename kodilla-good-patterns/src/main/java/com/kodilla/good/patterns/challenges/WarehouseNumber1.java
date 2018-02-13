@@ -8,7 +8,7 @@ public class WarehouseNumber1 implements ServiceOfWarehouse {
 
     private List<Product> productsList = new ArrayList<>();
 
-    WarehouseNumber1() {
+    public WarehouseNumber1() {
         addProducts();
     }
 
