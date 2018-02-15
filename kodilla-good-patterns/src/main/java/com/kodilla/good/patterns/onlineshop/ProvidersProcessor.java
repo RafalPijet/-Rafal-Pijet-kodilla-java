@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class ProvidersProcessor {
 
-    List<Product> newProducts = new ArrayList<>();
+    private List<Product> newProducts = new ArrayList<>();
 
     public ProvidersProcessor() {
         newProducts.add(new Product(1235, "Mleko 2% łaciate 1 litr", "nabiał", "mleczko, aż miło...", 77));

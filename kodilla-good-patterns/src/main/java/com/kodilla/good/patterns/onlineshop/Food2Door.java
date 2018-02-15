@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Food2Door {
 
-    List<Product> products = new ArrayList<>();
-    List<Provider> providers = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
+    private List<Provider> providers = new ArrayList<>();
 
     public Food2Door() {
         MyProvider extraFoodShop = new MyProvider("ExtraFoodShop", "42-118 Koniecpol, ul. Krańcowa 12", "extrafood.biuro@gmail.com", 600123456, "Alojzy Waleczny");

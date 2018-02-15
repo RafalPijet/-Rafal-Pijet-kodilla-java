@@ -6,9 +6,9 @@ import java.util.*;
 
 public class PrepareShow {
 
-    Food2Door food2Door = new Food2Door();
-    ProvidersProcessor providersProcessor = new ProvidersProcessor();
-    BufferedReader readData = new BufferedReader(new InputStreamReader(System.in));
+    private Food2Door food2Door = new Food2Door();
+    private ProvidersProcessor providersProcessor = new ProvidersProcessor();
+    private BufferedReader readData = new BufferedReader(new InputStreamReader(System.in));
 
 
     public void progress() {
