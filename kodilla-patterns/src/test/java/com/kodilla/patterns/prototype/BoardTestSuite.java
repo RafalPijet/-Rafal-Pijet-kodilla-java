@@ -13,17 +13,17 @@ public class BoardTestSuite {
         TaskList toDoList = new TaskList("To Do Tasks");
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
-                .forEach(n -> toDoList.getTasks().add(new Task("To Do task number " + n)));
+                .forEach(n -> toDoList.getTasks().add(new Task("To Do tasks number " + n)));
         //creating the TaskList for in progress
         TaskList inProgressList = new TaskList("In progress Tasks");
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
-                .forEach(n -> inProgressList.getTasks().add(new Task("In progress task number " + n)));
+                .forEach(n -> inProgressList.getTasks().add(new Task("In progress tasks number " + n)));
         //creating the TaskList for done
         TaskList doneList = new TaskList("Done Tasks");
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
-                .forEach(n -> doneList.getTasks().add(new Task("Done task number " + n)));
+                .forEach(n -> doneList.getTasks().add(new Task("Done tasks number " + n)));
         //creating the board and assigning the lists
         Board board = new Board("Project number 1");
         board.getLists().add(toDoList);
