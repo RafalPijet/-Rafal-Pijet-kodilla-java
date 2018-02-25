@@ -6,17 +6,6 @@ import java.util.List;
 public class BigMac {
     public static final boolean YES = true;
     public static final boolean NO = false;
-    public static final String STANDARD = "STANDARD";
-    public static final String THOUSAND_ISLAND = "THOUSAND_ISLAND";
-    public static final String BARBECUE = "BARBECUE";
-    public static final String SALAD = "SALAD";
-    public static final String ONION = "ONION";
-    public static final String BACON = "BACON";
-    public static final String CUCUMBER = "CUCUMBER";
-    public static final String CHILLI = "CHILLI";
-    public static final String MUSHROOMS = "MUSHROOMS";
-    public static final String SHRIMP = "SHRIMP";
-    public static final String CHEESE = "CHEESE";
     private final boolean roll;
     private final int burgers ;
     private final String sauce;
@@ -43,18 +32,24 @@ public class BigMac {
         }
 
         public BigMacBuilder giveSauce(String sauce) {
-            if (sauce == STANDARD || sauce == THOUSAND_ISLAND || sauce == BARBECUE) {
-                this.sauce = sauce;
-            } else {
+            for (Sauces sauceType : Sauces.values()) {
+                if (sauceType.getDescription() == sauce) {
+                    this.sauce = sauce;
+                }
+            }
+            if (this.sauce != sauce) {
                 throw new IllegalStateException("Unavailable value for the sauce field!");
             }
             return this;
         }
 
         public BigMacBuilder giveIngredients(String ingedients) {
-            if (ingedients == SALAD || ingedients == ONION || ingedients == BACON || ingedients == CHILLI || ingedients == MUSHROOMS || ingedients == SHRIMP || ingedients == CHEESE || ingedients == CUCUMBER) {
-                ingredients.add(ingedients);
-            } else {
+            for (Ingredients ingredientsType : Ingredients.values()){
+                if (ingredientsType.getDescription() == ingedients) {
+                    ingredients.add(ingedients);
+                }
+            }
+            if (!this.ingredients.contains(ingedients)) {
                 throw new IllegalStateException("Unavailable value for the ingredients field!");
             }
             return this;
