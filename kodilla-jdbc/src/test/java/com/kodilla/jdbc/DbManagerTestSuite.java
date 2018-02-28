@@ -21,7 +21,7 @@ public class DbManagerTestSuite {
         //Given
         DbManager dbManager = DbManager.getInstance();
         //When
-        String sqlQuery = "select * from USERS";
+        String sqlQuery = "SELECT * FROM USERS";
         Statement statement = dbManager.getConnection().createStatement();
         ResultSet rs = statement.executeQuery(sqlQuery);
         //Then
@@ -32,6 +32,29 @@ public class DbManagerTestSuite {
         }
         rs.close();
         statement.close();
+        System.out.println();
         Assert.assertEquals(5, counter);
+    }
+    @Test
+    public void testSelectUsersAndPosts() throws SQLException {
+        //Given
+        DbManager dbManager = DbManager.getInstance();
+        //When
+        String sqlQuery = "SELECT U.ID, U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS_QUANTITY\n" +
+                "FROM USERS U, POSTS P\n" +
+                "WHERE U.ID = P.USER_ID\n" +
+                "GROUP BY P.USER_ID\n" +
+                "HAVING COUNT(*) >= 2";
+        Statement statement = dbManager.getConnection().createStatement();
+        ResultSet result = statement.executeQuery(sqlQuery);
+        //Then
+        int counter = 0;
+        while (result.next()) {
+            System.out.println(result.getString("FIRSTNAME") + " " + result.getString("LASTNAME") + ", " + result.getInt("POSTS_QUANTITY"));
+            counter++;
+        }
+        result.close();
+        statement.close();
+        Assert.assertEquals(3, counter);
     }
 }
