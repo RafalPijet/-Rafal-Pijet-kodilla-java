@@ -33,7 +33,7 @@ public class BigMac {
 
         public BigMacBuilder giveSauce(String sauce) {
             for (Sauces sauceType : Sauces.values()) {
-                if (sauceType.getDescription() == sauce) {
+                if (sauceType.getDescription().equals(sauce)) {
                     this.sauce = sauce;
                 }
             }
@@ -45,7 +45,7 @@ public class BigMac {
 
         public BigMacBuilder giveIngredients(String ingedients) {
             for (Ingredients ingredientsType : Ingredients.values()){
-                if (ingredientsType.getDescription() == ingedients) {
+                if (ingredientsType.getDescription().equals(ingedients)) {
                     ingredients.add(ingedients);
                 }
             }
