@@ -27,14 +27,11 @@ public class TaskListDaoTestSuite {
         String toDoList = taskListToDo.getListName();
         String inProgressList = taskListInProgress.getListName();
         String doneList = taskListDone.getListName();
-        System.out.println(toDoList);
-        System.out.println(inProgressList);
-        System.out.println(doneList);
         //Then
         Assert.assertEquals(toDoList, repController.findByListName(toDoList).get(0).getListName());
         Assert.assertEquals(inProgressList, repController.findByListName(inProgressList).get(0).getListName());
         Assert.assertEquals(doneList, repController.findByListName(doneList).get(0).getListName());
-        //ClearUp
+        //CleanUp
         repController.deleteAll();
     }
 }
