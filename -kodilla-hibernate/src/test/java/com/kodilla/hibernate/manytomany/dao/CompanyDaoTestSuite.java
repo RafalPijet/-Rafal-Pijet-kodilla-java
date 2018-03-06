@@ -13,7 +13,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
-    CompanyDao companyDao;
+    private CompanyDao companyDao;
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany() {
@@ -22,7 +24,7 @@ public class CompanyDaoTestSuite {
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalski = new Employee("Linda", "Kovalski");
 
-        Company softwareMachine = new Company("Sofware Machine");
+        Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
         Company greyMatter = new Company("Grey Matter");
 
@@ -50,6 +52,8 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, sofwareMachineId);
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
+        Assert.assertEquals("Kovalski", employeeDao.retrieveEmployeeWithLastname("Kovalski").get(0).getLastname());
+        Assert.assertEquals("Software Machine", companyDao.retrieveCompanyWithFirstThreeLetters("sof%").get(0).getName());
 
         //CleanUp
         try {
