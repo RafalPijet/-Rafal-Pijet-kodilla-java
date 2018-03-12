@@ -7,7 +7,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompanyWithFirstThreeLetters",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :COMPANY_NAME",
+        query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :COMPANY_NAME",
         resultClass = Company.class
 )
 

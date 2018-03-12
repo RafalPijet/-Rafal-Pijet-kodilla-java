@@ -53,7 +53,7 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
         Assert.assertEquals("Kovalski", employeeDao.retrieveEmployeeWithLastname("Kovalski").get(0).getLastname());
-        Assert.assertEquals("Software Machine", companyDao.retrieveCompanyWithFirstThreeLetters("sof%").get(0).getName());
+        Assert.assertEquals("Software Machine", companyDao.retrieveCompanyWithFirstThreeLetters("sof").get(0).getName());
 
         //CleanUp
         try {
